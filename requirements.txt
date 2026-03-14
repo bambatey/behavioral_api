@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+firebase-admin
+python-dotenv
+pydantic
+pydantic-settings
+email-validator
+openpyxl
+PyJWT
