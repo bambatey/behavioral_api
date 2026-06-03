@@ -50,12 +50,16 @@ class FirestoreBaseRepository(AsyncRepositoryABC[T]):
 
             result = []
             for doc in docs_list:
-                data = doc.to_dict()
-                data['id'] = doc.id
-                if hasattr(self.model_class, 'from_dict'):
-                    result.append(self.model_class.from_dict(data))
-                else:
-                    result.append(self.model_class(**data))
+                try:
+                    data = doc.to_dict()
+                    data['id'] = doc.id
+                    if hasattr(self.model_class, 'from_dict'):
+                        result.append(self.model_class.from_dict(data))
+                    else:
+                        result.append(self.model_class(**data))
+                except Exception as inner:
+                    # Skip individual bad docs rather than nuking the whole list
+                    print(f"Skipping malformed doc {doc.id} in {self._collection}: {inner}")
             return result
         except Exception as e:
             print(f"Error getting all documents: {e}")
@@ -96,12 +100,15 @@ class FirestoreBaseRepository(AsyncRepositoryABC[T]):
             docs = query.stream()
             result = []
             async for doc in docs:
-                data = doc.to_dict()
-                data['id'] = doc.id
-                if hasattr(self.model_class, 'from_dict'):
-                    result.append(self.model_class.from_dict(data))
-                else:
-                    result.append(self.model_class(**data))
+                try:
+                    data = doc.to_dict()
+                    data['id'] = doc.id
+                    if hasattr(self.model_class, 'from_dict'):
+                        result.append(self.model_class.from_dict(data))
+                    else:
+                        result.append(self.model_class(**data))
+                except Exception as inner:
+                    print(f"Skipping malformed doc {doc.id} in {self._collection}: {inner}")
             return result
         except Exception as e:
             print(f"Error finding documents with filters {filters}: {e}")

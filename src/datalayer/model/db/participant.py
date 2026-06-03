@@ -30,6 +30,11 @@ class Participant:
     @staticmethod
     def from_dict(data: dict) -> "Participant":
         data = data.copy()
-        if isinstance(data["created_at"], str):
+        if isinstance(data.get("created_at"), str):
             data["created_at"] = datetime.fromisoformat(data["created_at"])
+        # Tolerate legacy keys (e.g., "test_type" from the old SPR/GJ schema)
+        known = {"id", "name", "assignment_index", "session_id", "created_at"}
+        data = {k: v for k, v in data.items() if k in known}
+        # Default for docs that predate assignment_index
+        data.setdefault("assignment_index", -1)
         return Participant(**data)
