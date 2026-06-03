@@ -14,7 +14,7 @@ from src.datalayer.repository import (
     SentenceRepository,
 )
 from src.middleware import verify_jwt_token
-from src.services import ExportService, ResultsService
+from src.services import AnalysisService, ExportService, ResultsService
 
 if TYPE_CHECKING:
     from firebase_admin.firestore_async import AsyncClient
@@ -130,6 +130,21 @@ async def export_all_results(
         iter([excel_bytes]),
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         headers={"Content-Disposition": "attachment; filename=all_results.xlsx"},
+    )
+
+
+@router.get("/analysis")
+async def export_analysis(
+    db: "AsyncClient" = Depends(get_db),
+    token: dict = Depends(verify_jwt_token),
+):
+    """Per-participant × per-condition (position × bias) mean Likert Excel."""
+    service = AnalysisService(db)
+    excel_bytes = await service.export()
+    return StreamingResponse(
+        iter([excel_bytes]),
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": "attachment; filename=analysis.xlsx"},
     )
 
 
