@@ -1,9 +1,15 @@
 from .participant_repository import ParticipantRepository
 from .trial_result_repository import TrialResultRepository
-from .test_item_repository import TestItemRepository
+from .context_repository import ContextRepository
+from .sentence_repository import SentenceRepository
+from .filler_repository import FillerRepository
+from .assignment_counter_repository import AssignmentCounterRepository
 
 __all__ = [
     "ParticipantRepository",
     "TrialResultRepository",
-    "TestItemRepository",
+    "ContextRepository",
+    "SentenceRepository",
+    "FillerRepository",
+    "AssignmentCounterRepository",
 ]

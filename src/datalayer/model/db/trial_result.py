@@ -6,77 +6,77 @@ import uuid
 
 @dataclass
 class TrialResult:
-    """Model representing a single trial result (for both SPR and GJ tests)"""
-    id: str  # Firestore doc ID
+    """A single trial response. Covers both critical (context+sentence) and filler items."""
+    id: str
     participant_id: str
     participant_name: str
-    test_type: str  # "spr" or "gj"
     trial_index: int
-    rt: Optional[float] = None
-    response: Optional[str] = None
-    task_type: Optional[str] = None  # "word_reading", "comprehension_check", "judgment", "fixation"
+    is_filler: bool
 
-    # SPR-specific fields
+    # Stimulus identifiers (for critical: sentence_id+context_id; for filler: filler_id)
     sentence_id: Optional[str] = None
-    word: Optional[str] = None
-    word_position: Optional[int] = None
-    condition: Optional[str] = None
+    context_id: Optional[str] = None
+    filler_id: Optional[str] = None
 
-    # GJ-specific fields
-    sentence: Optional[str] = None
-    is_grammatical: Optional[bool] = None
-    attrition_marker: Optional[str] = None
-    accuracy: Optional[int] = None
-    correct_answer: Optional[str] = None
+    # Stimulus content (denormalized for analysis convenience)
+    context_text: Optional[str] = None
+    sentence_text: Optional[str] = None
 
-    # Metadata
+    # Critical-only fields
+    bias: Optional[str] = None  # "subject" | "object"
+    position: Optional[int] = None  # 1..6
+
+    # Response
+    response: Optional[str] = None  # "true" | "false"
+    correct_answer: Optional[bool] = None
+    accuracy: Optional[int] = None  # 1 if response matches correct_answer, else 0
+    rt: Optional[float] = None
+
     created_at: datetime = field(default_factory=datetime.utcnow)
 
     @staticmethod
     def create(
         participant_id: str,
         participant_name: str,
-        test_type: str,
-        trial_data: dict
+        trial_data: dict,
     ) -> "TrialResult":
-        """Factory method to create a trial result from jsPsych trial data"""
-        sentence_id = trial_data.get("sentence_id")
-        if sentence_id is not None:
-            sentence_id = str(sentence_id)
+        response = trial_data.get("response")
+        correct_answer = trial_data.get("correct_answer")
+        accuracy = None
+        if response is not None and correct_answer is not None:
+            response_bool = str(response).lower() in ("true", "1", "yes", "doğru", "dogru")
+            accuracy = 1 if response_bool == bool(correct_answer) else 0
 
         return TrialResult(
             id=str(uuid.uuid4()),
             participant_id=participant_id,
             participant_name=participant_name,
-            test_type=test_type,
             trial_index=trial_data.get("trial_index"),
+            is_filler=bool(trial_data.get("is_filler", False)),
+            sentence_id=trial_data.get("sentence_id"),
+            context_id=trial_data.get("context_id"),
+            filler_id=trial_data.get("filler_id"),
+            context_text=trial_data.get("context_text"),
+            sentence_text=trial_data.get("sentence_text"),
+            bias=trial_data.get("bias"),
+            position=trial_data.get("position"),
+            response=str(response) if response is not None else None,
+            correct_answer=correct_answer,
+            accuracy=accuracy,
             rt=trial_data.get("rt"),
-            response=trial_data.get("response"),
-            task_type=trial_data.get("task_type"),
-            sentence_id=sentence_id,
-            word=trial_data.get("word"),
-            word_position=trial_data.get("word_position"),
-            condition=trial_data.get("condition"),
-            sentence=trial_data.get("sentence"),
-            is_grammatical=trial_data.get("is_grammatical"),
-            attrition_marker=trial_data.get("attrition_marker"),
-            accuracy=trial_data.get("accuracy"),
-            correct_answer=trial_data.get("correct_answer"),
             created_at=datetime.utcnow(),
         )
 
     def to_dict(self):
-        """Convert to dictionary for Firestore serialization"""
         data = asdict(self)
-        # Convert created_at to ISO format for Firestore
         data["created_at"] = self.created_at.isoformat()
-        # Remove None values to keep Firestore documents clean
         return {k: v for k, v in data.items() if v is not None}
 
     @staticmethod
     def from_dict(data: dict) -> "TrialResult":
-        """Reconstruct from Firestore document"""
         data = data.copy()
         if isinstance(data.get("created_at"), str):
             data["created_at"] = datetime.fromisoformat(data["created_at"])
+        # Provide defaults for fields possibly absent in older docs
+        data.setdefault("is_filler", False)
         return TrialResult(**data)
