@@ -44,9 +44,8 @@ class TrialInfo(BaseModel):
     sentence_text: Optional[str] = None
     bias: Optional[str] = None
     position: Optional[int] = None
-    response: Optional[str] = None
+    response: Optional[int] = None  # 1..7 Likert
     correct_answer: Optional[bool] = None
-    accuracy: Optional[int] = None
     rt: Optional[float] = None
 
 
@@ -113,7 +112,6 @@ async def get_participant_results(
                 position=t.position,
                 response=t.response,
                 correct_answer=t.correct_answer,
-                accuracy=t.accuracy,
                 rt=t.rt,
             )
             for t in trials
@@ -170,20 +168,20 @@ async def get_statistics(
             "critical_count": 0,
             "filler_count": 0,
             "avg_rt": None,
-            "avg_accuracy": None,
+            "avg_likert": None,
         }
 
     critical = [t for t in all_trials if not t.is_filler]
     fillers = [t for t in all_trials if t.is_filler]
     rts = [t.rt for t in critical if t.rt is not None]
-    accs = [t.accuracy for t in critical if t.accuracy is not None]
+    likerts = [t.response for t in critical if isinstance(t.response, int)]
     return {
         "total_participants": len(participants),
         "total_trials": len(all_trials),
         "critical_count": len(critical),
         "filler_count": len(fillers),
         "avg_rt": round(sum(rts) / len(rts), 2) if rts else None,
-        "avg_accuracy": round(sum(accs) / len(accs), 3) if accs else None,
+        "avg_likert": round(sum(likerts) / len(likerts), 2) if likerts else None,
     }
 
 

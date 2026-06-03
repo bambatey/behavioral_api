@@ -1,0 +1,1597 @@
+{
+  "timestamp": "2026-06-03T15:08:51.910732",
+  "contexts": [
+    {
+      "context": {
+        "id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+        "title": "Öykü-Betül-kütüphane-S bias",
+        "text": "Öykü ile Betül aynı bölümde okuyordu. O sırada kütüphanede ders çalışan Öykü'ydü; Betül ise yemekhanedeydi.",
+        "bias": "subject",
+        "order_index": 1,
+        "is_active": true,
+        "created_at": "2026-06-03T14:38:20.299365",
+        "updated_at": "2026-06-03T14:38:20.299367"
+      },
+      "sentences": [
+        {
+          "id": "69f08538-08fd-4088-99c3-c668813debae",
+          "context_id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+          "position": 1,
+          "text": "Öykü Betül'e mesaj attığında, kütüphanede ders çalışıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:38:37.448789",
+          "updated_at": "2026-06-03T14:38:37.448802"
+        },
+        {
+          "id": "45c64e2e-4257-4260-8dbc-6ea93a50e2d1",
+          "context_id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+          "position": 2,
+          "text": "Öykü Betül'e mesaj attığında, o kütüphanede ders çalışıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:38:44.395298",
+          "updated_at": "2026-06-03T14:38:44.395310"
+        },
+        {
+          "id": "c6465116-6a58-4ff6-8fa3-ebcea42f4997",
+          "context_id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+          "position": 3,
+          "text": "Öykü Betül'e mesaj attığında, kendisi kütüphanede ders çalışıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:38:52.098042",
+          "updated_at": "2026-06-03T14:39:01.442928"
+        },
+        {
+          "id": "f26889ae-9eda-402b-b991-f81c229ef935",
+          "context_id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+          "position": 4,
+          "text": "Kütüphanede ders çalışırken, Öykü Betül'e mesaj attı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:39:07.541130",
+          "updated_at": "2026-06-03T14:39:07.541137"
+        },
+        {
+          "id": "f767e772-1480-4555-8850-f88c909841ff",
+          "context_id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+          "position": 5,
+          "text": "O kütüphanede ders çalışırken, Öykü Betül'e mesaj attı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:39:18.758240",
+          "updated_at": "2026-06-03T14:39:18.758248"
+        },
+        {
+          "id": "792f5ed2-afe7-4567-81e3-7ddc63563026",
+          "context_id": "caa4d28c-5e4a-47c1-8705-df713ebdc531",
+          "position": 6,
+          "text": "Kendisi kütüphanede ders çalışırken, Öykü Betül'e mesaj attı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:39:25.108416",
+          "updated_at": "2026-06-03T14:39:25.108425"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+        "title": "Öykü-Betül-kütüphane-O biased",
+        "text": "Öykü ile Betül aynı bölümde okuyordu. O sırada kütüphanede ders çalışan Betül'dü; Öykü ise yemekhanedeydi.",
+        "bias": "object",
+        "order_index": 2,
+        "is_active": true,
+        "created_at": "2026-06-03T02:03:50.934465",
+        "updated_at": "2026-06-03T10:23:20.521302"
+      },
+      "sentences": [
+        {
+          "id": "a49745c0-7565-48a2-9867-31a456b5e40a",
+          "context_id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+          "position": 1,
+          "text": "Öykü Betül'e mesaj attığında, kütüphanede ders çalışıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:21:13.721286",
+          "updated_at": "2026-06-03T10:21:13.721297"
+        },
+        {
+          "id": "34b897ec-dbcc-4463-8e6c-c886414e20e8",
+          "context_id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+          "position": 2,
+          "text": "Öykü Betül'e mesaj attığında, o kütüphanede ders çalışıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:21:47.456465",
+          "updated_at": "2026-06-03T10:21:47.456472"
+        },
+        {
+          "id": "47e7785a-12d2-4c97-9e60-ebdc32d74ae5",
+          "context_id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+          "position": 3,
+          "text": "Öykü Betül'e mesaj attığında, kendisi kütüphanede ders çalışıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:22:07.286237",
+          "updated_at": "2026-06-03T10:22:07.286245"
+        },
+        {
+          "id": "fa53ce90-ac40-4e50-86fa-d2af02d2b7a7",
+          "context_id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+          "position": 4,
+          "text": "Kütüphanede ders çalışırken, Öykü Betül'e mesaj attı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:22:19.426172",
+          "updated_at": "2026-06-03T10:22:19.426178"
+        },
+        {
+          "id": "3eda8032-b1a2-4d5a-b5b6-91bd971c7677",
+          "context_id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+          "position": 5,
+          "text": "O kütüphanede ders çalışırken, Öykü Betül'e mesaj attı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:22:27.551722",
+          "updated_at": "2026-06-03T10:22:27.551728"
+        },
+        {
+          "id": "66233df9-d154-4f4f-aaa6-fefd2ee279d4",
+          "context_id": "e2cf716d-834b-4ac0-8c43-ceb7567fb24a",
+          "position": 6,
+          "text": "Kendisi kütüphanede ders çalışırken, Öykü Betül'e mesaj attı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:22:58.743074",
+          "updated_at": "2026-06-03T10:22:58.743080"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+        "title": "Ahmet-Mehmet-eve girmek-S biased",
+        "text": "Ahmet ile Mehmet apartmanda komşuydu. O an eve giren Ahmet'ti; Mehmet ise kapının önünde duruyordu.",
+        "bias": "subject",
+        "order_index": 3,
+        "is_active": true,
+        "created_at": "2026-06-03T02:03:54.221566",
+        "updated_at": "2026-06-03T10:25:15.853583"
+      },
+      "sentences": [
+        {
+          "id": "123dea1d-d5dc-45ef-8b0e-cb5f0b21bf2e",
+          "context_id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+          "position": 1,
+          "text": "Ahmet Mehmet'i selamladığında, eve giriyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:25:37.846097",
+          "updated_at": "2026-06-03T10:25:37.846103"
+        },
+        {
+          "id": "d3a64963-158c-4e61-9a47-a2bb20855702",
+          "context_id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+          "position": 2,
+          "text": "Ahmet Mehmet'i selamladığında, o eve giriyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:25:52.658211",
+          "updated_at": "2026-06-03T10:25:52.658216"
+        },
+        {
+          "id": "2001e85b-08ab-4fdb-bc59-ac18307dcc6a",
+          "context_id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+          "position": 3,
+          "text": "Ahmet Mehmet'i selamladığında, kendisi eve giriyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:26:08.200697",
+          "updated_at": "2026-06-03T10:26:08.200704"
+        },
+        {
+          "id": "d9d41824-9ca3-4568-a442-a52fca470c78",
+          "context_id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+          "position": 4,
+          "text": "Eve girerken, Ahmet Mehmet'i selamladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:26:23.377411",
+          "updated_at": "2026-06-03T10:26:23.377418"
+        },
+        {
+          "id": "4082bee8-7882-491e-9619-3da5da0e62e0",
+          "context_id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+          "position": 5,
+          "text": "O eve girerken, Ahmet Mehmet'i selamladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:26:31.917460",
+          "updated_at": "2026-06-03T10:26:31.917474"
+        },
+        {
+          "id": "20249891-9a92-4adc-9647-2ef58a241818",
+          "context_id": "ef764bfb-41f2-4289-9241-c41321d647c6",
+          "position": 6,
+          "text": "Kendisi eve girerken, Ahmet Mehmet'i selamladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:26:43.596303",
+          "updated_at": "2026-06-03T10:26:43.596314"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+        "title": "Ahmet-Mehmet-eve girmek- O biased",
+        "text": "Ahmet ile Mehmet apartmanda komşuydu. O an eve giren Mehmet'ti; Ahmet ise kapının önünde duruyordu.",
+        "bias": "object",
+        "order_index": 4,
+        "is_active": true,
+        "created_at": "2026-06-03T02:03:57.660286",
+        "updated_at": "2026-06-03T10:27:08.665378"
+      },
+      "sentences": [
+        {
+          "id": "714b9922-1dbc-4c6f-aa90-772b4bc8c8e9",
+          "context_id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+          "position": 1,
+          "text": "Ahmet Mehmet'i selamladığında, eve giriyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:27:35.287337",
+          "updated_at": "2026-06-03T10:27:35.287346"
+        },
+        {
+          "id": "705c57ff-d78a-4a15-b83c-a299e831f88a",
+          "context_id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+          "position": 2,
+          "text": "Ahmet Mehmet'i selamladığında, o eve giriyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:27:43.260723",
+          "updated_at": "2026-06-03T10:27:43.260729"
+        },
+        {
+          "id": "70dd1ea9-285d-4c09-9aa4-68b461d91567",
+          "context_id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+          "position": 3,
+          "text": "Ahmet Mehmet'i selamladığında, kendisi eve giriyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:27:52.161309",
+          "updated_at": "2026-06-03T10:27:52.161318"
+        },
+        {
+          "id": "8e298176-3544-413c-9336-c20e2c2a5ccb",
+          "context_id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+          "position": 4,
+          "text": "Eve girerken, Ahmet Mehmet'i selamladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:27:59.577265",
+          "updated_at": "2026-06-03T10:27:59.577272"
+        },
+        {
+          "id": "66576947-2270-4101-b71f-13b32c594204",
+          "context_id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+          "position": 5,
+          "text": "O eve girerken, Ahmet Mehmet'i selamladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:28:06.162981",
+          "updated_at": "2026-06-03T10:28:06.162997"
+        },
+        {
+          "id": "bd5987f8-700a-4ad0-8836-3c3e324dd2f5",
+          "context_id": "5b645b07-0920-403e-88c9-12c46962b6c4",
+          "position": 6,
+          "text": "Kendisi eve girerken, Ahmet Mehmet'i selamladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:28:16.813377",
+          "updated_at": "2026-06-03T10:28:16.813384"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+        "title": "Enes-Onur-trene binmek-S biased",
+        "text": "Enes ile Onur garda buluşmuştu. O an trene binen Enes'ti; Onur ise peronda kalıyordu.",
+        "bias": "subject",
+        "order_index": 5,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:01.100228",
+        "updated_at": "2026-06-03T10:29:18.282540"
+      },
+      "sentences": [
+        {
+          "id": "c9c29060-d6c1-4d60-afcd-1069cba731be",
+          "context_id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+          "position": 1,
+          "text": "Enes Onur'a el salladığında, trene biniyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:29:40.935309",
+          "updated_at": "2026-06-03T10:29:40.935315"
+        },
+        {
+          "id": "2b7dd768-7470-466c-85ca-ee894f9c46b5",
+          "context_id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+          "position": 2,
+          "text": "Enes Onur'a el salladığında, o trene biniyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:29:47.407625",
+          "updated_at": "2026-06-03T10:29:47.407632"
+        },
+        {
+          "id": "017c797c-ec2e-449d-aeba-1efd3d0c3543",
+          "context_id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+          "position": 3,
+          "text": "Enes Onur'a el salladığında, kendisi trene biniyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:29:56.114737",
+          "updated_at": "2026-06-03T10:29:56.114747"
+        },
+        {
+          "id": "94bfb87a-af3b-410d-91d7-b683b770fec0",
+          "context_id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+          "position": 4,
+          "text": "Trene binerken, Enes Onur'a el salladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:31:06.530489",
+          "updated_at": "2026-06-03T10:31:06.530496"
+        },
+        {
+          "id": "0d4888f2-3b89-4f81-bfb1-da7ed41cce93",
+          "context_id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+          "position": 5,
+          "text": "O trene binerken, Enes Onur'a el salladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:31:14.469820",
+          "updated_at": "2026-06-03T10:31:14.469827"
+        },
+        {
+          "id": "f58cdb2b-7386-42c0-bb55-b450764b761c",
+          "context_id": "d96f51af-1d22-4422-a0d7-46c5b30fb7c8",
+          "position": 6,
+          "text": "Kendisi trene binerken, Enes Onur'a el salladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:31:24.728720",
+          "updated_at": "2026-06-03T10:31:24.728726"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+        "title": "Enes-Onur-trene binmek-O biased",
+        "text": "Enes ile Onur garda buluşmuştu. O an trene binen Onur'du; Enes ise peronda kalıyordu.",
+        "bias": "object",
+        "order_index": 6,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:04.305268",
+        "updated_at": "2026-06-03T10:32:17.755095"
+      },
+      "sentences": [
+        {
+          "id": "4e04b4b9-34bc-4e25-bc43-d170c7c3c3fc",
+          "context_id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+          "position": 1,
+          "text": "Enes Onur'a el salladığında, trene biniyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:32:34.140979",
+          "updated_at": "2026-06-03T10:32:34.140986"
+        },
+        {
+          "id": "0c39bad8-2400-41c3-ac24-87471f496bf6",
+          "context_id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+          "position": 2,
+          "text": "Enes Onur'a el salladığında, o trene biniyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:32:41.931730",
+          "updated_at": "2026-06-03T10:32:41.931736"
+        },
+        {
+          "id": "534ae455-8900-42e2-b972-a75388ded814",
+          "context_id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+          "position": 3,
+          "text": "Enes Onur'a el salladığında, kendisi trene biniyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:32:50.830982",
+          "updated_at": "2026-06-03T10:32:50.830988"
+        },
+        {
+          "id": "5ffe7863-aa14-43cf-bad5-937400648ac0",
+          "context_id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+          "position": 4,
+          "text": "Trene binerken, Enes Onur'a el salladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:32:57.652676",
+          "updated_at": "2026-06-03T10:32:57.652682"
+        },
+        {
+          "id": "fc4ac455-76de-4151-b7b3-c208a15fbca2",
+          "context_id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+          "position": 5,
+          "text": "O trene binerken, Enes Onur'a el salladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:33:08.643799",
+          "updated_at": "2026-06-03T10:33:08.643807"
+        },
+        {
+          "id": "c1e2570a-e0d2-426e-9514-85a357fda12b",
+          "context_id": "e146e360-1194-4f2a-b5d6-dfdf28795931",
+          "position": 6,
+          "text": "Kendisi trene binerken, Enes Onur'a el salladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:33:25.465174",
+          "updated_at": "2026-06-03T10:33:25.465180"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+        "title": "Ayşe-Fatma-Araba kullanmak-S biased",
+        "text": "Ayşe ile Fatma eski iş arkadaşıydı. O an araba kullanan Ayşe'ydi; Fatma ise kaldırımda yürüyordu.",
+        "bias": "subject",
+        "order_index": 7,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:08.516903",
+        "updated_at": "2026-06-03T10:34:18.628454"
+      },
+      "sentences": [
+        {
+          "id": "60d3e8f6-7f68-4442-9649-045e8fb30b5e",
+          "context_id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+          "position": 1,
+          "text": "Ayşe Fatma'yı gördüğünde, araba kullanıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:07.269671",
+          "updated_at": "2026-06-03T10:35:07.269676"
+        },
+        {
+          "id": "2377679d-884a-4340-b84c-60d1d873b742",
+          "context_id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+          "position": 2,
+          "text": "Ayşe Fatma'yı gördüğünde, o araba kullanıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:25.911492",
+          "updated_at": "2026-06-03T10:35:25.911498"
+        },
+        {
+          "id": "682bdb16-b013-421f-bc3f-aba0189a63a8",
+          "context_id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+          "position": 3,
+          "text": "Ayşe Fatma'yı gördüğünde, kendisi araba kullanıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:39.969113",
+          "updated_at": "2026-06-03T10:35:39.969120"
+        },
+        {
+          "id": "fd31c322-37f7-45b3-ac36-b0b038abcae6",
+          "context_id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+          "position": 4,
+          "text": "Araba kullanırken, Ayşe Fatma'yı gördü.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:58.350145",
+          "updated_at": "2026-06-03T10:35:58.350151"
+        },
+        {
+          "id": "edd8d870-6f05-4ef7-ac8e-26cb954df96b",
+          "context_id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+          "position": 5,
+          "text": "O araba kullanırken, Ayşe Fatma'yı gördü.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:36:17.946811",
+          "updated_at": "2026-06-03T10:36:17.946817"
+        },
+        {
+          "id": "a5b02460-e982-43e8-976d-9a41fad516b8",
+          "context_id": "b0a0213b-7b17-418e-9fb5-5a77fdd3cf33",
+          "position": 6,
+          "text": "Kendisi araba kullanırken, Ayşe Fatma'yı gördü.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:36:34.453002",
+          "updated_at": "2026-06-03T10:36:34.453008"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "e917a6de-13b9-4775-9232-54e48264187f",
+        "title": "Ayşe-Fatma-Araba kullanmak-O biased",
+        "text": "Ayşe ile Fatma eski iş arkadaşıydı. O an araba kullanan Fatma'ydı; Ayşe ise kaldırımda yürüyordu.",
+        "bias": "object",
+        "order_index": 8,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:11.608256",
+        "updated_at": "2026-06-03T10:34:43.296647"
+      },
+      "sentences": [
+        {
+          "id": "d69f5ff4-452a-4256-bf2f-678cd91f3694",
+          "context_id": "e917a6de-13b9-4775-9232-54e48264187f",
+          "position": 1,
+          "text": "Ayşe Fatma'yı gördüğünde, araba kullanıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:14.768068",
+          "updated_at": "2026-06-03T10:35:14.768077"
+        },
+        {
+          "id": "141ab71e-ef61-41d7-89c6-e29443c69d7c",
+          "context_id": "e917a6de-13b9-4775-9232-54e48264187f",
+          "position": 2,
+          "text": "Ayşe Fatma'yı gördüğünde, o araba kullanıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:31.500865",
+          "updated_at": "2026-06-03T10:35:31.500873"
+        },
+        {
+          "id": "d9fd87c1-ce75-44f9-8756-2b0151abce1c",
+          "context_id": "e917a6de-13b9-4775-9232-54e48264187f",
+          "position": 3,
+          "text": "Ayşe Fatma'yı gördüğünde, kendisi araba kullanıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:35:46.829503",
+          "updated_at": "2026-06-03T10:35:46.829510"
+        },
+        {
+          "id": "e51afaa3-d2a5-4e57-ac2a-e2b0d538b5e3",
+          "context_id": "e917a6de-13b9-4775-9232-54e48264187f",
+          "position": 4,
+          "text": "Araba kullanırken, Ayşe Fatma'yı gördü.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:36:07.013067",
+          "updated_at": "2026-06-03T10:36:07.013072"
+        },
+        {
+          "id": "c0297fe6-b77e-47d7-bbe5-f98f662f471b",
+          "context_id": "e917a6de-13b9-4775-9232-54e48264187f",
+          "position": 5,
+          "text": "O araba kullanırken, Ayşe Fatma'yı gördü.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:36:24.744328",
+          "updated_at": "2026-06-03T10:36:24.744337"
+        },
+        {
+          "id": "88d697e4-5b72-483f-9af7-ea43b7cc8310",
+          "context_id": "e917a6de-13b9-4775-9232-54e48264187f",
+          "position": 6,
+          "text": "Kendisi araba kullanırken, Ayşe Fatma'yı gördü.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:36:42.153447",
+          "updated_at": "2026-06-03T10:36:42.153472"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+        "title": "Murat-Berk-Parkta yürüyüş-S biased",
+        "text": "Murat ile Berk yakın arkadaştı. O sırada parkta yürüyüş yapan Murat'tı; Berk ise evde dinleniyordu.",
+        "bias": "subject",
+        "order_index": 9,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:16.178660",
+        "updated_at": "2026-06-03T10:38:04.695140"
+      },
+      "sentences": [
+        {
+          "id": "7dfc36e0-2823-4d6f-a26d-d0754d35efc2",
+          "context_id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+          "position": 1,
+          "text": "Murat Berk'i aradığında, parkta yürüyüş yapıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:39:10.036173",
+          "updated_at": "2026-06-03T10:39:10.036180"
+        },
+        {
+          "id": "1c0ad591-61d2-40e1-984a-00ad2189860e",
+          "context_id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+          "position": 2,
+          "text": "Murat Berk'i aradığında, o parkta yürüyüş yapıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:39:17.436417",
+          "updated_at": "2026-06-03T10:39:17.436424"
+        },
+        {
+          "id": "8e69d9ee-d42e-4311-88be-0c85543092a7",
+          "context_id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+          "position": 3,
+          "text": "Murat Berk'i aradığında, kendisi parkta yürüyüş yapıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:39:51.583649",
+          "updated_at": "2026-06-03T10:39:51.583656"
+        },
+        {
+          "id": "bf6d407e-ac07-45e6-854f-004aae96afaa",
+          "context_id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+          "position": 4,
+          "text": "Parkta yürüyüş yaparken, Murat Berk'i aradı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:40:28.173887",
+          "updated_at": "2026-06-03T10:40:28.173894"
+        },
+        {
+          "id": "49cffdbc-b246-49e3-a0af-2ecbc4dcd8db",
+          "context_id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+          "position": 5,
+          "text": "O, parkta yürüyüş yaparken, Murat Berk'i aradı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:41:00.797225",
+          "updated_at": "2026-06-03T10:41:00.797231"
+        },
+        {
+          "id": "74cf97fb-7dc1-4a0c-b12c-e080e6bb1a65",
+          "context_id": "23e0ad5e-cf23-4d85-8682-ba430774a6b0",
+          "position": 6,
+          "text": "Kendisi parkta yürüyüş yaparken, Murat Berk'i aradı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:41:14.719717",
+          "updated_at": "2026-06-03T10:41:14.719724"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+        "title": "Murat-Berk-Parkta yürüyüş-O biased",
+        "text": "Murat ile Berk yakın arkadaştı. O sırada parkta yürüyüş yapan Berk'ti; Murat ise evde dinleniyordu.",
+        "bias": "object",
+        "order_index": 10,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:20.892144",
+        "updated_at": "2026-06-03T10:38:24.334862"
+      },
+      "sentences": [
+        {
+          "id": "de879dbe-924b-42e5-91be-6b2218ad68a4",
+          "context_id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+          "position": 1,
+          "text": "Murat Berk'i aradığında, parkta yürüyüş yapıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:39:06.856084",
+          "updated_at": "2026-06-03T10:39:06.856095"
+        },
+        {
+          "id": "d3ad4af5-9854-4d25-9ad1-ac06c0f4fe47",
+          "context_id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+          "position": 2,
+          "text": "Murat Berk'i aradığında, o parkta yürüyüş yapıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:39:27.225131",
+          "updated_at": "2026-06-03T10:39:27.225138"
+        },
+        {
+          "id": "427b2149-d7f1-4955-9ea2-e7f6bdcbd726",
+          "context_id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+          "position": 3,
+          "text": "Murat Berk'i aradığında, kendisi parkta yürüyüş yapıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:39:48.301854",
+          "updated_at": "2026-06-03T10:39:48.301862"
+        },
+        {
+          "id": "874aeb32-2fa7-4139-aeb0-e3ffa5c9ff78",
+          "context_id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+          "position": 4,
+          "text": "Parkta yürüyüş yaparken, Murat Berk'i aradı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:40:34.507088",
+          "updated_at": "2026-06-03T10:40:34.507096"
+        },
+        {
+          "id": "13233326-2099-4390-a2d0-6db331b6df33",
+          "context_id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+          "position": 5,
+          "text": "O, parkta yürüyüş yaparken, Murat Berk'i aradı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:41:06.554402",
+          "updated_at": "2026-06-03T10:41:06.554410"
+        },
+        {
+          "id": "62fff51b-55db-4a31-81ef-f71138770848",
+          "context_id": "cebed564-6f7c-4fd1-a85b-7a3bcd6110c8",
+          "position": 6,
+          "text": "Kendisi parkta yürüyüş yaparken, Murat Berk'i aradı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:41:22.180189",
+          "updated_at": "2026-06-03T10:41:22.180197"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+        "title": "Selim-Cem-selam vermek-S biased",
+        "text": "Selim ile Cem aynı sınıftaydı. O an sınıfa giren Selim'di; Cem ise koridorda bekliyordu.",
+        "bias": "subject",
+        "order_index": 11,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:25.308235",
+        "updated_at": "2026-06-03T10:42:05.337086"
+      },
+      "sentences": [
+        {
+          "id": "1f5474d8-cd1f-47d2-a2fc-4f691bc12d78",
+          "context_id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+          "position": 1,
+          "text": "Selim Cem'e selam verdiğinde, sınıfa giriyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:42:52.952643",
+          "updated_at": "2026-06-03T10:42:52.952648"
+        },
+        {
+          "id": "db1d1cd4-b345-4871-94a8-604810f5404d",
+          "context_id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+          "position": 2,
+          "text": "Selim Cem'e selam verdiğinde, o, sınıfa giriyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:43:04.540600",
+          "updated_at": "2026-06-03T10:43:04.540609"
+        },
+        {
+          "id": "0a5e2b5e-8b4b-449a-b534-798a01e31f52",
+          "context_id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+          "position": 3,
+          "text": "Selim Cem'e selam verdiğinde, kendisi sınıfa giriyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:43:19.044236",
+          "updated_at": "2026-06-03T10:43:19.044245"
+        },
+        {
+          "id": "d98b1699-c9fc-4d8d-bdcb-c46c4f32099c",
+          "context_id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+          "position": 4,
+          "text": "Sınıfa girerken, Selim Cem'e selam verdi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:43:36.458440",
+          "updated_at": "2026-06-03T10:43:36.458447"
+        },
+        {
+          "id": "b493aad4-0430-42ee-b8ff-1fcbbc3c3858",
+          "context_id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+          "position": 5,
+          "text": "O, sınıfa girerken, Selim Cem'e selam verdi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:44:07.402935",
+          "updated_at": "2026-06-03T10:44:07.402947"
+        },
+        {
+          "id": "a2348557-e489-4aaf-bb68-04bd8c31e382",
+          "context_id": "f3e815a5-39f6-41a7-8c72-4394dc24d5c1",
+          "position": 6,
+          "text": "Kendisi sınıfa girerken, Selim Cem'e selam verdi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:44:23.191781",
+          "updated_at": "2026-06-03T10:44:23.191788"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+        "title": "Selim-Cem-selam vermek-O biased",
+        "text": "Selim ile Cem aynı sınıftaydı. O an sınıfa giren Cem'di; Selim ise koridorda bekliyordu.",
+        "bias": "object",
+        "order_index": 12,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:31.148586",
+        "updated_at": "2026-06-03T10:42:19.336135"
+      },
+      "sentences": [
+        {
+          "id": "b6449b72-bd7e-4637-bc48-e37a08fd594b",
+          "context_id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+          "position": 1,
+          "text": "Selim Cem'e selam verdiğinde, sınıfa giriyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:42:57.124593",
+          "updated_at": "2026-06-03T10:42:57.124601"
+        },
+        {
+          "id": "3429ab9f-2ac9-4953-9688-cf423b9a9863",
+          "context_id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+          "position": 2,
+          "text": "Selim Cem'e selam verdiğinde, o, sınıfa giriyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:43:10.572737",
+          "updated_at": "2026-06-03T10:43:10.572744"
+        },
+        {
+          "id": "6975a009-35bb-4da8-b7e4-03b9657e62d2",
+          "context_id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+          "position": 3,
+          "text": "Selim Cem'e selam verdiğinde, kendisi sınıfa giriyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:43:30.143246",
+          "updated_at": "2026-06-03T10:43:30.143253"
+        },
+        {
+          "id": "5625965a-8cd7-43d6-9434-e62e000a3f7e",
+          "context_id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+          "position": 4,
+          "text": "Sınıfa girerken, Selim Cem'e selam verdi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:43:44.451404",
+          "updated_at": "2026-06-03T10:43:44.451412"
+        },
+        {
+          "id": "d20832dd-6663-446e-9549-8fc54e9ec257",
+          "context_id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+          "position": 5,
+          "text": "O, sınıfa girerken, Selim Cem'e selam verdi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T10:44:26.064733",
+          "updated_at": "2026-06-03T10:44:26.064740"
+        },
+        {
+          "id": "18e2b5ad-db02-4ee1-a260-30c3b2565108",
+          "context_id": "84ed3ae7-fde7-4ac2-aab9-f8c9bd3a5f1c",
+          "position": 6,
+          "text": "Kendisi sınıfa girerken, Selim Cem'e selam verdi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T10:44:30.001600",
+          "updated_at": "2026-06-03T10:44:30.001606"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+        "title": "Zeynep-Elif-kafede oturmak-S biased",
+        "text": "Zeynep ile Elif kafede buluşacaklardı. Kafeye erken varan ve o an kafede oturan Zeynep'ti; Elif ise kapıda paltosunu çıkarıyordu.",
+        "bias": "subject",
+        "order_index": 13,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:37.303465",
+        "updated_at": "2026-06-03T13:59:05.797076"
+      },
+      "sentences": [
+        {
+          "id": "3a75440d-31d5-4125-bd57-5d9c0dd18f21",
+          "context_id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+          "position": 1,
+          "text": "Zeynep Elif'i selamladığında, kafede oturuyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T13:45:38.969159",
+          "updated_at": "2026-06-03T14:00:21.824867"
+        },
+        {
+          "id": "e76fa61a-c580-4f23-a4bc-6df60775f878",
+          "context_id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+          "position": 2,
+          "text": "Zeynep Elif'i selamladığında, o kafede oturuyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T13:45:48.586435",
+          "updated_at": "2026-06-03T14:00:35.450616"
+        },
+        {
+          "id": "46d6ec1b-96c1-49a9-a317-6ab4cefea27f",
+          "context_id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+          "position": 3,
+          "text": "Zeynep Elif'i selamladığında, kendisi kafede oturuyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T13:45:59.299142",
+          "updated_at": "2026-06-03T14:00:44.897791"
+        },
+        {
+          "id": "37a35e69-3527-47fb-a49b-eabaa4ae0e81",
+          "context_id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+          "position": 4,
+          "text": "Kafede otururken, Zeynep Elif'i selamladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:00:58.564641",
+          "updated_at": "2026-06-03T14:00:58.564649"
+        },
+        {
+          "id": "882f8981-e352-4e7e-8d42-2a312d204ad1",
+          "context_id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+          "position": 5,
+          "text": "O kafede otururken, Zeynep Elif'i selamladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:01:06.341967",
+          "updated_at": "2026-06-03T14:01:06.341974"
+        },
+        {
+          "id": "25d5ddb8-e171-4f15-a1a2-0b5a48376e1b",
+          "context_id": "7602e93c-0b05-42dc-beb6-bc635b1e8549",
+          "position": 6,
+          "text": "Kendisi kafede otururken, Zeynep Elif'i selamladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:01:12.943385",
+          "updated_at": "2026-06-03T14:01:12.943397"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+        "title": "Zeynep-Elif-kafede oturmak-O biased",
+        "text": "Zeynep ile Elif kafede buluşacaklardı. Kafeye erken varan ve o an kafede oturan Elif'ti; Zeynep ise kapıda paltosunu çıkarıyordu.",
+        "bias": "object",
+        "order_index": 14,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:42.662065",
+        "updated_at": "2026-06-03T13:59:40.212720"
+      },
+      "sentences": [
+        {
+          "id": "b623e120-971f-454d-93b8-46b4fe54dda5",
+          "context_id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+          "position": 1,
+          "text": "Zeynep Elif'i selamladığında, kafede oturuyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:04:11.871251",
+          "updated_at": "2026-06-03T14:04:11.871258"
+        },
+        {
+          "id": "f33651cf-93f5-4db8-bad8-e0fde32754d1",
+          "context_id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+          "position": 2,
+          "text": "Zeynep Elif'i selamladığında, o kafede oturuyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:04:19.228892",
+          "updated_at": "2026-06-03T14:04:19.228900"
+        },
+        {
+          "id": "d3270d16-0a07-4210-941a-f1202b807941",
+          "context_id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+          "position": 3,
+          "text": "Zeynep Elif'i selamladığında, kendisi kafede oturuyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:04:34.074040",
+          "updated_at": "2026-06-03T14:04:34.074048"
+        },
+        {
+          "id": "942bf3d4-c73c-4860-af74-9a5196aac8a3",
+          "context_id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+          "position": 4,
+          "text": "Kafede otururken, Zeynep Elif'i selamladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:04:41.018480",
+          "updated_at": "2026-06-03T14:04:41.018490"
+        },
+        {
+          "id": "67c2393d-1aaf-4e42-834e-066b01f58887",
+          "context_id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+          "position": 5,
+          "text": "O kafede otururken, Zeynep Elif'i selamladı.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:04:49.779003",
+          "updated_at": "2026-06-03T14:04:49.779013"
+        },
+        {
+          "id": "44295aa5-a094-43aa-904b-f86d76f336f2",
+          "context_id": "c285fb48-a658-42b3-979c-9c2f0d35a9f5",
+          "position": 6,
+          "text": "Kendisi kafede otururken, Zeynep Elif'i selamladı.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:04:58.391724",
+          "updated_at": "2026-06-03T14:04:58.391741"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+        "title": "Uğur-Hakan-güneşlenmek-S bias",
+        "text": "Uğur ile Hakan tatildeydi. O sırada sahilde güneşlenen Uğur'du; Hakan ise büfeden içecek alıyordu.",
+        "bias": "subject",
+        "order_index": 15,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:48.730861",
+        "updated_at": "2026-06-03T14:07:57.235639"
+      },
+      "sentences": [
+        {
+          "id": "7c8101d7-74fc-4f92-b316-81e473ba50b3",
+          "context_id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+          "position": 1,
+          "text": "Uğur Hakan'a seslendiğinde, sahilde güneşleniyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:08:50.081755",
+          "updated_at": "2026-06-03T14:08:50.081762"
+        },
+        {
+          "id": "9cce6b72-e570-430f-a333-d2cdad7aa90d",
+          "context_id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+          "position": 2,
+          "text": "Uğur Hakan'a seslendiğinde, o sahilde güneşleniyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:09:52.102487",
+          "updated_at": "2026-06-03T14:09:52.102495"
+        },
+        {
+          "id": "d47faa6a-0fbb-4b78-b874-5e4f6c1bc73a",
+          "context_id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+          "position": 3,
+          "text": "Uğur Hakan'a seslendiğinde, kendisi sahilde güneşleniyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:09:59.270663",
+          "updated_at": "2026-06-03T14:09:59.270670"
+        },
+        {
+          "id": "fbd7b362-5610-4712-a40e-414c2a5bde3f",
+          "context_id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+          "position": 4,
+          "text": "Sahilde güneşlenirken, Uğur Hakan'a seslendi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:10:09.005697",
+          "updated_at": "2026-06-03T14:10:09.005703"
+        },
+        {
+          "id": "ca10a17d-2a39-429e-a4ba-e8bf79d59df0",
+          "context_id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+          "position": 5,
+          "text": "O sahilde güneşlenirken, Uğur Hakan'a seslendi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:10:17.517682",
+          "updated_at": "2026-06-03T14:10:17.517689"
+        },
+        {
+          "id": "ea036934-246b-416e-9a95-2cf960739bb2",
+          "context_id": "5d633be3-ddc4-49fb-b80b-b67cd062703a",
+          "position": 6,
+          "text": "Kendisi sahilde güneşlenirken, Uğur Hakan'a seslendi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:10:28.703363",
+          "updated_at": "2026-06-03T14:10:28.703370"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+        "title": "Uğur-Hakan-güneşlenmek- O bias",
+        "text": "Uğur ile Hakan tatildeydi. O sırada sahilde güneşlenen Hakan'dı; Uğur ise büfeden içecek alıyordu.",
+        "bias": "object",
+        "order_index": 16,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:53.933627",
+        "updated_at": "2026-06-03T14:08:16.518704"
+      },
+      "sentences": [
+        {
+          "id": "9bab24ab-3794-40e6-a52e-6f5c15829932",
+          "context_id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+          "position": 1,
+          "text": "Uğur Hakan'a seslendiğinde, sahilde güneşleniyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:10:37.434958",
+          "updated_at": "2026-06-03T14:10:37.434965"
+        },
+        {
+          "id": "54dfa3e3-2e98-474d-a2f6-955f21271fcf",
+          "context_id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+          "position": 2,
+          "text": "Uğur Hakan'a seslendiğinde, o sahilde güneşleniyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:10:43.690019",
+          "updated_at": "2026-06-03T14:10:43.690025"
+        },
+        {
+          "id": "59f5f4a2-250b-41ac-939f-683faee50bd8",
+          "context_id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+          "position": 3,
+          "text": "Uğur Hakan'a seslendiğinde, kendisi sahilde güneşleniyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:10:54.526363",
+          "updated_at": "2026-06-03T14:10:54.526368"
+        },
+        {
+          "id": "d151ab51-91b0-428b-9026-3ad47bac33da",
+          "context_id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+          "position": 4,
+          "text": "Sahilde güneşlenirken, Uğur Hakan'a seslendi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:11:56.031835",
+          "updated_at": "2026-06-03T14:11:56.031848"
+        },
+        {
+          "id": "b3ee5a1f-0677-4a66-9c5e-8484dda86b7f",
+          "context_id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+          "position": 5,
+          "text": "O sahilde güneşlenirken, Uğur Hakan'a seslendi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:12:02.500429",
+          "updated_at": "2026-06-03T14:12:02.500436"
+        },
+        {
+          "id": "e5b79136-9f38-4c20-b662-076616e1b5c6",
+          "context_id": "2e772f9b-64d3-4a70-a746-38702a51671a",
+          "position": 6,
+          "text": "Kendisi sahilde güneşlenirken, Uğur Hakan'a seslendi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:12:09.755014",
+          "updated_at": "2026-06-03T14:12:09.755024"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "18119ed3-99e4-4565-840b-13aae021e329",
+        "title": "Beyza-Sude-evden çıkma-S bias",
+        "text": "Beyza ile Sude ev arkadaşıydı. O sırada evden çıkmaya hazırlanan Beyza'ydı; Sude ise mutfaktaydı.",
+        "bias": "subject",
+        "order_index": 17,
+        "is_active": true,
+        "created_at": "2026-06-03T02:04:59.744353",
+        "updated_at": "2026-06-03T14:14:01.857959"
+      },
+      "sentences": [
+        {
+          "id": "923444a5-744d-4e1d-ae2f-2647b6bd0ad9",
+          "context_id": "18119ed3-99e4-4565-840b-13aae021e329",
+          "position": 1,
+          "text": "Beyza Sude'ye seslendiğinde, evden çıkmaya hazırlanıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:14:41.167482",
+          "updated_at": "2026-06-03T14:14:41.167488"
+        },
+        {
+          "id": "12378c24-1133-4f01-bc1f-75ad6a8053b8",
+          "context_id": "18119ed3-99e4-4565-840b-13aae021e329",
+          "position": 2,
+          "text": "Beyza Sude'ye seslendiğinde,o evden çıkmaya hazırlanıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:14:53.412147",
+          "updated_at": "2026-06-03T14:14:53.412153"
+        },
+        {
+          "id": "d6ccfabc-7e8e-41cc-a280-68251bb4bb17",
+          "context_id": "18119ed3-99e4-4565-840b-13aae021e329",
+          "position": 3,
+          "text": "Beyza Sude'ye seslendiğinde,kendisi evden çıkmaya hazırlanıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:11.537798",
+          "updated_at": "2026-06-03T14:15:11.537805"
+        },
+        {
+          "id": "90ef0764-aa69-4ed2-be23-12f60b49f0fe",
+          "context_id": "18119ed3-99e4-4565-840b-13aae021e329",
+          "position": 4,
+          "text": "Evden çıkmaya hazırlanırken, Beyza Sude'ye seslendi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:28.001552",
+          "updated_at": "2026-06-03T14:15:28.001560"
+        },
+        {
+          "id": "bf7a882d-b591-43cd-8821-a94169cbe544",
+          "context_id": "18119ed3-99e4-4565-840b-13aae021e329",
+          "position": 5,
+          "text": "O evden çıkmaya hazırlanırken, Beyza Sude'ye seslendi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:51.504385",
+          "updated_at": "2026-06-03T14:15:51.504391"
+        },
+        {
+          "id": "d1e95d2a-254d-46f0-ac50-f4bded5a2b50",
+          "context_id": "18119ed3-99e4-4565-840b-13aae021e329",
+          "position": 6,
+          "text": "Kendisi evden çıkmaya hazırlanırken, Beyza Sude'ye seslendi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:16:07.021427",
+          "updated_at": "2026-06-03T14:16:07.021433"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+        "title": "Beyza-Sude-evden çıkma-S bias",
+        "text": "Beyza ile Sude ev arkadaşıydı. O sırada evden çıkmaya hazırlanan Sude'ydi; Beyza ise mutfaktaydı.",
+        "bias": "object",
+        "order_index": 18,
+        "is_active": true,
+        "created_at": "2026-06-03T02:05:03.739175",
+        "updated_at": "2026-06-03T14:14:15.811082"
+      },
+      "sentences": [
+        {
+          "id": "191fead8-560b-4e9e-a5d3-521135fc0999",
+          "context_id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+          "position": 1,
+          "text": "Beyza Sude'ye seslendiğinde, evden çıkmaya hazırlanıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:14:45.904282",
+          "updated_at": "2026-06-03T14:14:45.904289"
+        },
+        {
+          "id": "1275fbc1-bb2c-4ca5-93ac-62363ff66d74",
+          "context_id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+          "position": 2,
+          "text": "Beyza Sude'ye seslendiğinde,o evden çıkmaya hazırlanıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:00.845359",
+          "updated_at": "2026-06-03T14:15:00.845366"
+        },
+        {
+          "id": "58ed8c5a-e746-4ade-83c1-9655c01941ea",
+          "context_id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+          "position": 3,
+          "text": "Beyza Sude'ye seslendiğinde,kendisi evden çıkmaya hazırlanıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:15.294216",
+          "updated_at": "2026-06-03T14:15:15.294222"
+        },
+        {
+          "id": "3d41e61f-270a-496a-a905-2a68ecb2500e",
+          "context_id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+          "position": 4,
+          "text": "Evden çıkmaya hazırlanırken, Beyza Sude'ye seslendi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:41.275657",
+          "updated_at": "2026-06-03T14:15:41.275666"
+        },
+        {
+          "id": "a976baf5-e3f0-4a76-83bc-f352fd4019a4",
+          "context_id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+          "position": 5,
+          "text": "O evden çıkmaya hazırlanırken, Beyza Sude'ye seslendi.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:15:57.236503",
+          "updated_at": "2026-06-03T14:15:57.236510"
+        },
+        {
+          "id": "91e04c03-181d-4719-8513-ab4c93244865",
+          "context_id": "e4d351b7-d959-417c-8fcb-a673bf7879bb",
+          "position": 6,
+          "text": "Kendisi evden çıkmaya hazırlanırken, Beyza Sude'ye seslendi.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:16:10.846656",
+          "updated_at": "2026-06-03T14:16:10.846680"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+        "title": "Pelin-Derya-bahçede dolaş-S bias",
+        "text": "Pelin ile Derya bir bahçe partisindeydi. O an bahçede dolaşan Pelin'di; Derya ise masada oturuyordu.",
+        "bias": "subject",
+        "order_index": 19,
+        "is_active": true,
+        "created_at": "2026-06-03T02:05:08.769799",
+        "updated_at": "2026-06-03T14:18:33.668225"
+      },
+      "sentences": [
+        {
+          "id": "301145b8-9da8-405e-b4d9-b59fde3deb70",
+          "context_id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+          "position": 1,
+          "text": "Pelin Derya'yı ararken, bahçede dolaşıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:19:29.237519",
+          "updated_at": "2026-06-03T14:19:29.237528"
+        },
+        {
+          "id": "5c471219-2b86-4343-b840-9301b45d02db",
+          "context_id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+          "position": 2,
+          "text": "Pelin Derya'yı ararken, o bahçede dolaşıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:19:46.129196",
+          "updated_at": "2026-06-03T14:19:46.129201"
+        },
+        {
+          "id": "bec484ec-c56e-41d0-9aea-f6a30ddc7ab4",
+          "context_id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+          "position": 3,
+          "text": "Pelin Derya'yı ararken, kendisi bahçede dolaşıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:19:57.862659",
+          "updated_at": "2026-06-03T14:19:57.862665"
+        },
+        {
+          "id": "062d03dd-73bb-4a74-8d03-5b147256fbc8",
+          "context_id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+          "position": 4,
+          "text": "Bahçede dolaşırken, Pelin Derya'yı arıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:10.499454",
+          "updated_at": "2026-06-03T14:20:10.499460"
+        },
+        {
+          "id": "6c8eff56-97cb-40ea-8c80-0566120a5d59",
+          "context_id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+          "position": 5,
+          "text": "O bahçede dolaşırken, Pelin Derya'yı arıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:24.752703",
+          "updated_at": "2026-06-03T14:20:24.752711"
+        },
+        {
+          "id": "6144cb5a-a078-45af-a6e3-e7a1c8c21b93",
+          "context_id": "96e73d16-e202-412e-9495-1567f3d71ae7",
+          "position": 6,
+          "text": "Kendisi bahçede dolaşırken, Pelin Derya'yı arıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:37.293464",
+          "updated_at": "2026-06-03T14:20:37.293471"
+        }
+      ]
+    },
+    {
+      "context": {
+        "id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+        "title": "Pelin-Derya-bahçede dolaş-O bias",
+        "text": "Pelin ile Derya bir bahçe partisindeydi. O an bahçede dolaşan Derya'ydı; Pelin ise masada oturuyordu.",
+        "bias": "object",
+        "order_index": 20,
+        "is_active": true,
+        "created_at": "2026-06-03T02:05:12.914692",
+        "updated_at": "2026-06-03T14:18:52.524229"
+      },
+      "sentences": [
+        {
+          "id": "7f6dac01-eb9a-48a7-ab2e-013b879f3ba5",
+          "context_id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+          "position": 1,
+          "text": "Pelin Derya'yı ararken, bahçede dolaşıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:19:36.875449",
+          "updated_at": "2026-06-03T14:19:36.875457"
+        },
+        {
+          "id": "95818ffa-c23c-4c5c-9024-863f8d7cf27a",
+          "context_id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+          "position": 2,
+          "text": "Pelin Derya'yı ararken, o bahçede dolaşıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:19:50.093217",
+          "updated_at": "2026-06-03T14:19:50.093229"
+        },
+        {
+          "id": "844ec42f-bf72-4c3d-a3a6-dd19ecdce3b3",
+          "context_id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+          "position": 3,
+          "text": "Pelin Derya'yı ararken, kendisi bahçede dolaşıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:01.010176",
+          "updated_at": "2026-06-03T14:20:01.010184"
+        },
+        {
+          "id": "3df87a52-6fba-4850-aa9b-4e5002465102",
+          "context_id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+          "position": 4,
+          "text": "Bahçede dolaşırken, Pelin Derya'yı arıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:16.813306",
+          "updated_at": "2026-06-03T14:20:16.813313"
+        },
+        {
+          "id": "4bcdd48a-58eb-44a6-9e87-e8791e539dc3",
+          "context_id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+          "position": 5,
+          "text": "O bahçede dolaşırken, Pelin Derya'yı arıyordu.",
+          "correct_answer": true,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:29.209421",
+          "updated_at": "2026-06-03T14:20:29.209427"
+        },
+        {
+          "id": "93f79882-e311-4dd5-a2e2-b4c9b4529d6d",
+          "context_id": "d68a34a8-8ec0-4098-a25d-99eca48a5c97",
+          "position": 6,
+          "text": "Kendisi bahçede dolaşırken, Pelin Derya'yı arıyordu.",
+          "correct_answer": false,
+          "is_active": true,
+          "created_at": "2026-06-03T14:20:40.765951",
+          "updated_at": "2026-06-03T14:20:40.765959"
+        }
+      ]
+    }
+  ],
+  "fillers": [
+    {
+      "id": "50cc3858-0991-4d14-b012-b3258163059f",
+      "context_text": "Ali sabah simit ve çay aldı, Mehmet ise poğaça aldı.",
+      "sentence_text": "Simit alan Ali'ydi.",
+      "correct_answer": true,
+      "order_index": 1,
+      "is_active": true,
+      "created_at": "2026-06-03T10:45:34.605303",
+      "updated_at": "2026-06-03T10:45:34.605306"
+    },
+    {
+      "id": "8e982c4e-7bbf-44db-983f-8ffbe613a09b",
+      "context_text": "Ayşe yemeği pişirdi, Fatma da sofrayı kurdu.",
+      "sentence_text": "Sofrayı Ayşe kurdu.",
+      "correct_answer": false,
+      "order_index": 2,
+      "is_active": true,
+      "created_at": "2026-06-03T10:45:57.351999",
+      "updated_at": "2026-06-03T10:45:57.352002"
+    },
+    {
+      "id": "21814c46-84a6-4ef1-a0f3-059100f7cffa",
+      "context_text": "Emre dün İstanbul'a uçakla gitti.",
+      "sentence_text": "O, İstanbul'a trenle gitti.",
+      "correct_answer": false,
+      "order_index": 3,
+      "is_active": true,
+      "created_at": "2026-06-03T10:46:16.137430",
+      "updated_at": "2026-06-03T10:46:16.137433"
+    },
+    {
+      "id": "195838eb-4868-4027-8ebe-305fc7c3fe5e",
+      "context_text": "Selin, Deniz'in ablasıdır.",
+      "sentence_text": "Deniz, Selin'in kardeşidir.",
+      "correct_answer": true,
+      "order_index": 4,
+      "is_active": true,
+      "created_at": "2026-06-03T10:46:35.272164",
+      "updated_at": "2026-06-03T10:46:35.272166"
+    },
+    {
+      "id": "b7593d28-f4f5-4502-b80a-bc663c90821e",
+      "context_text": "Naz alışverişi bitirince faturayı kendisi ödedi.",
+      "sentence_text": "Faturayı Naz ödedi.",
+      "correct_answer": true,
+      "order_index": 5,
+      "is_active": true,
+      "created_at": "2026-06-03T10:48:06.165041",
+      "updated_at": "2026-06-03T10:48:06.165043"
+    },
+    {
+      "id": "0b7805f3-0d18-417d-b204-d22f32d255d9",
+      "context_text": "Bahçede kadın çiçekleri sularken çocuk da köpeği seviyordu.",
+      "sentence_text": "Köpeği seven kadındı.",
+      "correct_answer": false,
+      "order_index": 6,
+      "is_active": true,
+      "created_at": "2026-06-03T10:50:06.451868",
+      "updated_at": "2026-06-03T10:50:06.451870"
+    },
+    {
+      "id": "38c43b04-fbf2-4976-ada4-550bc8e2fb46",
+      "context_text": "Çocuklar parkta koşuyordu; Mert ise bir bankta oturuyordu.",
+      "sentence_text": "Çocuklar Mert'i çağırdığında, o bankta oturuyordu.",
+      "correct_answer": true,
+      "order_index": 7,
+      "is_active": true,
+      "created_at": "2026-06-03T11:13:50.158845",
+      "updated_at": "2026-06-03T11:13:50.158847"
+    },
+    {
+      "id": "dd21c004-dfb2-4cf1-842e-0db1ba357f54",
+      "context_text": "Misafirler salonda sohbet ediyordu; Selin ise mutfakta yemek yapıyordu.",
+      "sentence_text": "Misafirler Selin'i çağırdığında, o bahçedeydi.",
+      "correct_answer": false,
+      "order_index": 8,
+      "is_active": true,
+      "created_at": "2026-06-03T11:14:05.353857",
+      "updated_at": "2026-06-03T11:14:05.353859"
+    },
+    {
+      "id": "01a63b37-a91f-40ea-8c01-3d603c5545f3",
+      "context_text": "Kuzenleri havuzda yüzüyordu; Naz ise şezlongda güneşleniyordu.",
+      "sentence_text": "Kuzenleri Naz'ı çağırdığında, o havuzdaydı.",
+      "correct_answer": false,
+      "order_index": 9,
+      "is_active": true,
+      "created_at": "2026-06-03T11:14:34.874862",
+      "updated_at": "2026-06-03T11:14:34.874864"
+    },
+    {
+      "id": "0a9403ce-1839-42dd-af8a-fcb339294b60",
+      "context_text": "Çocuklar sınıfta resim yapıyordu; Esra ise koridorda bekliyordu.",
+      "sentence_text": "Çocuklar Esra'yı çağırdığında, o koridordaydı.",
+      "correct_answer": true,
+      "order_index": 10,
+      "is_active": true,
+      "created_at": "2026-06-03T11:16:09.683428",
+      "updated_at": "2026-06-03T11:16:09.683430"
+    },
+    {
+      "id": "ddebb927-37eb-4189-8437-23de54378188",
+      "context_text": "Misafirler bahçede otururken Pınar içeride çay demliyordu.",
+      "sentence_text": "Misafirler Pınar'ı çağırdığında, onlar bahçedeydi.",
+      "correct_answer": true,
+      "order_index": 11,
+      "is_active": true,
+      "created_at": "2026-06-03T11:23:05.645185",
+      "updated_at": "2026-06-03T11:23:05.645187"
+    }
+  ]
+}

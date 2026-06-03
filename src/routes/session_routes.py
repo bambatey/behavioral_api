@@ -28,6 +28,8 @@ class TrialPayload(BaseModel):
     bias: Optional[str] = None
     position: Optional[int] = None
     correct_answer: Optional[bool] = None
+    response: Optional[int] = None  # 1..7 Likert
+    rt: Optional[float] = None
 
 
 class StartSessionResponse(BaseModel):

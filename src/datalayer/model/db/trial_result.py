@@ -26,10 +26,9 @@ class TrialResult:
     bias: Optional[str] = None  # "subject" | "object"
     position: Optional[int] = None  # 1..6
 
-    # Response
-    response: Optional[str] = None  # "true" | "false"
-    correct_answer: Optional[bool] = None
-    accuracy: Optional[int] = None  # 1 if response matches correct_answer, else 0
+    # Response — 1..7 Likert scale (1 = hiç doğru değil, 7 = çok doğru)
+    response: Optional[int] = None
+    correct_answer: Optional[bool] = None  # admin'in bilgisi, ham veri olarak kalır (analiz dışı)
     rt: Optional[float] = None
 
     created_at: datetime = field(default_factory=datetime.utcnow)
@@ -40,12 +39,13 @@ class TrialResult:
         participant_name: str,
         trial_data: dict,
     ) -> "TrialResult":
-        response = trial_data.get("response")
-        correct_answer = trial_data.get("correct_answer")
-        accuracy = None
-        if response is not None and correct_answer is not None:
-            response_bool = str(response).lower() in ("true", "1", "yes", "doğru", "dogru")
-            accuracy = 1 if response_bool == bool(correct_answer) else 0
+        raw_response = trial_data.get("response")
+        response: Optional[int] = None
+        if raw_response is not None:
+            try:
+                response = int(raw_response)
+            except (TypeError, ValueError):
+                response = None
 
         return TrialResult(
             id=str(uuid.uuid4()),
@@ -60,9 +60,8 @@ class TrialResult:
             sentence_text=trial_data.get("sentence_text"),
             bias=trial_data.get("bias"),
             position=trial_data.get("position"),
-            response=str(response) if response is not None else None,
-            correct_answer=correct_answer,
-            accuracy=accuracy,
+            response=response,
+            correct_answer=trial_data.get("correct_answer"),
             rt=trial_data.get("rt"),
             created_at=datetime.utcnow(),
         )
@@ -79,4 +78,11 @@ class TrialResult:
             data["created_at"] = datetime.fromisoformat(data["created_at"])
         # Provide defaults for fields possibly absent in older docs
         data.setdefault("is_filler", False)
+        # Drop legacy keys (e.g., "accuracy" field that used to be computed server-side)
+        known = {
+            "id", "participant_id", "participant_name", "trial_index", "is_filler",
+            "sentence_id", "context_id", "filler_id", "context_text", "sentence_text",
+            "bias", "position", "response", "correct_answer", "rt", "created_at",
+        }
+        data = {k: v for k, v in data.items() if k in known}
         return TrialResult(**data)

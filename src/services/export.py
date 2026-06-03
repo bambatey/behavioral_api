@@ -23,9 +23,8 @@ COLUMNS = [
     "Sentence Text",
     "Bias",
     "Position",
-    "Response",
+    "Response (Likert 1-7)",
     "Correct Answer",
-    "Accuracy",
     "RT (ms)",
     "Created At",
 ]
@@ -79,7 +78,6 @@ class ExportService:
                 trial.position,
                 trial.response,
                 trial.correct_answer,
-                trial.accuracy,
                 trial.rt,
                 trial.created_at.isoformat() if trial.created_at else None,
             ]
