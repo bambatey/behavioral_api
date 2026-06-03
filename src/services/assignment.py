@@ -21,8 +21,9 @@ if TYPE_CHECKING:
     from firebase_admin.firestore_async import AsyncClient
 
 
-CYCLE_USERS = 12  # 12 users complete one Latin-square cycle
-CONTEXTS_PER_USER = 24
+CYCLE_USERS = 12          # 12 users complete one Latin-square cycle
+PAIRS_PER_USER = 24       # each user gets 24 critical trials
+CONTEXTS_PER_BIAS = 24    # admin must provide 24 subject + 24 object contexts
 POSITIONS_PER_CONTEXT = 6
 
 
@@ -38,24 +39,31 @@ class AssignmentService:
         self.participant_repo = ParticipantRepository(db)
 
     async def start_session(self, participant_name: str) -> Dict:
-        """
-        Allocate a Latin-square slot for the new participant, build their trial set,
-        persist the Participant record, and return everything the frontend needs.
-        """
         contexts = await self.context_repo.list_active_ordered()
-        if len(contexts) < CONTEXTS_PER_USER:
+        subject_contexts = sorted(
+            (c for c in contexts if c.bias == BIAS_SUBJECT),
+            key=lambda c: c.order_index,
+        )
+        object_contexts = sorted(
+            (c for c in contexts if c.bias == BIAS_OBJECT),
+            key=lambda c: c.order_index,
+        )
+        if len(subject_contexts) < CONTEXTS_PER_BIAS or len(object_contexts) < CONTEXTS_PER_BIAS:
             raise ValueError(
-                f"Need at least {CONTEXTS_PER_USER} active contexts, got {len(contexts)}."
+                f"Need {CONTEXTS_PER_BIAS} subject-biased and {CONTEXTS_PER_BIAS} object-biased "
+                f"active contexts; got {len(subject_contexts)} subject and {len(object_contexts)} object."
             )
-        # Take exactly 24 contexts (in case admin added extra)
-        contexts = contexts[:CONTEXTS_PER_USER]
+        subject_contexts = subject_contexts[:CONTEXTS_PER_BIAS]
+        object_contexts = object_contexts[:CONTEXTS_PER_BIAS]
 
-        sentences_by_context = await self._load_sentences_indexed(contexts)
+        sentence_index = await self._load_sentences_indexed(subject_contexts + object_contexts)
         fillers = await self.filler_repo.list_active_ordered()
 
         user_index = await self.counter_repo.next_index(modulo=CYCLE_USERS)
 
-        critical_trials = self._build_critical_trials(user_index, contexts, sentences_by_context)
+        critical_trials = self._build_critical_trials(
+            user_index, subject_contexts, object_contexts, sentence_index
+        )
         filler_trials = self._build_filler_trials(fillers)
 
         all_trials = critical_trials + filler_trials
@@ -77,34 +85,39 @@ class AssignmentService:
 
     async def _load_sentences_indexed(
         self, contexts: List[Context]
-    ) -> Dict[str, Dict]:
-        """Returns {context_id: {(bias, position): Sentence}} for fast lookup."""
-        index: Dict[str, Dict] = {}
+    ) -> Dict[str, Dict[int, Sentence]]:
+        """Returns {context_id: {position: Sentence}} for fast lookup."""
+        index: Dict[str, Dict[int, Sentence]] = {}
         for c in contexts:
             sentences = await self.sentence_repo.find_active_by_context(c.id)
-            ctx_index: Dict = {}
+            ctx_index: Dict[int, Sentence] = {}
             for s in sentences:
-                ctx_index[(s.bias, s.position)] = s
+                ctx_index[s.position] = s
             index[c.id] = ctx_index
         return index
 
     def _build_critical_trials(
         self,
         user_index: int,
-        contexts: List[Context],
-        sentences_by_context: Dict[str, Dict],
+        subject_contexts: List[Context],
+        object_contexts: List[Context],
+        sentence_index: Dict[str, Dict[int, Sentence]],
     ) -> List[Dict]:
         trials = []
-        for c, context in enumerate(contexts):
-            position = ((c + user_index) % POSITIONS_PER_CONTEXT) + 1
-            bias_idx = ((c // POSITIONS_PER_CONTEXT) + (user_index // POSITIONS_PER_CONTEXT)) % 2
-            bias = BIAS_SUBJECT if bias_idx == 0 else BIAS_OBJECT
-            ctx_index = sentences_by_context.get(context.id, {})
-            sentence = ctx_index.get((bias, position))
+        for i in range(PAIRS_PER_USER):
+            position = ((i + user_index) % POSITIONS_PER_CONTEXT) + 1
+            bias_idx = ((i // POSITIONS_PER_CONTEXT) + (user_index // POSITIONS_PER_CONTEXT)) % 2
+            if bias_idx == 0:
+                context = object_contexts[i]
+                bias = BIAS_OBJECT
+            else:
+                context = subject_contexts[i]
+                bias = BIAS_SUBJECT
+            sentence = sentence_index.get(context.id, {}).get(position)
             if sentence is None:
                 raise ValueError(
-                    f"Context '{context.title}' (order {context.order_index}) is missing "
-                    f"bias={bias}, position={position}. Admin must fill all 12 sentences per context."
+                    f"Context '{context.title}' (bias={context.bias}, order={context.order_index}) "
+                    f"is missing position={position}. Each context needs all 6 sentences."
                 )
             trials.append({
                 "is_filler": False,
@@ -112,8 +125,8 @@ class AssignmentService:
                 "context_text": context.text,
                 "sentence_id": sentence.id,
                 "sentence_text": sentence.text,
-                "bias": sentence.bias,
-                "position": sentence.position,
+                "bias": bias,
+                "position": position,
                 "correct_answer": sentence.correct_answer,
             })
         return trials

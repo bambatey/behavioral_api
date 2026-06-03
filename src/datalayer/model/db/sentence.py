@@ -1,6 +1,5 @@
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
-from typing import Optional
 import uuid
 
 
@@ -10,13 +9,12 @@ BIAS_OBJECT = "object"
 
 @dataclass
 class Sentence:
-    """A sentence belonging to a context. Per context: 6 subject-biased + 6 object-biased = 12."""
+    """A sentence belonging to a context. Per context: 6 sentences at positions 1..6."""
     id: str
     context_id: str
-    bias: str  # "subject" | "object"
     position: int  # 1..6
     text: str
-    correct_answer: bool  # True if sentence is judged "correct/grammatical"
+    correct_answer: bool
     is_active: bool = True
     created_at: datetime = field(default_factory=datetime.utcnow)
     updated_at: datetime = field(default_factory=datetime.utcnow)
@@ -24,19 +22,15 @@ class Sentence:
     @staticmethod
     def create(
         context_id: str,
-        bias: str,
         position: int,
         text: str,
         correct_answer: bool,
     ) -> "Sentence":
-        if bias not in (BIAS_SUBJECT, BIAS_OBJECT):
-            raise ValueError(f"bias must be 'subject' or 'object', got: {bias}")
         if not 1 <= position <= 6:
             raise ValueError(f"position must be in 1..6, got: {position}")
         return Sentence(
             id=str(uuid.uuid4()),
             context_id=context_id,
-            bias=bias,
             position=position,
             text=text,
             correct_answer=correct_answer,
@@ -58,4 +52,7 @@ class Sentence:
             data["created_at"] = datetime.fromisoformat(data["created_at"])
         if isinstance(data.get("updated_at"), str):
             data["updated_at"] = datetime.fromisoformat(data["updated_at"])
+        # Strip legacy keys (e.g., bias which used to live on Sentence)
+        known = {"id", "context_id", "position", "text", "correct_answer", "is_active", "created_at", "updated_at"}
+        data = {k: v for k, v in data.items() if k in known}
         return Sentence(**data)

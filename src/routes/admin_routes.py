@@ -192,6 +192,7 @@ async def get_statistics(
 class ContextPayload(BaseModel):
     title: str
     text: str
+    bias: str  # "subject" | "object"
     order_index: int
     is_active: Optional[bool] = True
 
@@ -200,6 +201,7 @@ class ContextResponse(BaseModel):
     id: str
     title: str
     text: str
+    bias: str
     order_index: int
     is_active: bool
     created_at: str
@@ -211,11 +213,17 @@ def _context_to_response(c: Context) -> ContextResponse:
         id=c.id,
         title=c.title,
         text=c.text,
+        bias=c.bias,
         order_index=c.order_index,
         is_active=c.is_active,
         created_at=c.created_at.isoformat(),
         updated_at=c.updated_at.isoformat(),
     )
+
+
+def _validate_context_payload(payload: ContextPayload) -> None:
+    if payload.bias not in (BIAS_SUBJECT, BIAS_OBJECT):
+        raise HTTPException(status_code=400, detail="bias must be 'subject' or 'object'")
 
 
 @router.get("/contexts", response_model=List[ContextResponse])
@@ -233,8 +241,14 @@ async def create_context(
     db: "AsyncClient" = Depends(get_db),
     token: dict = Depends(verify_jwt_token),
 ):
+    _validate_context_payload(payload)
     repo = ContextRepository(db)
-    ctx = Context.create(title=payload.title, text=payload.text, order_index=payload.order_index)
+    ctx = Context.create(
+        title=payload.title,
+        text=payload.text,
+        bias=payload.bias,
+        order_index=payload.order_index,
+    )
     if payload.is_active is not None:
         ctx.is_active = payload.is_active
     await repo.save(ctx)
@@ -248,12 +262,14 @@ async def update_context(
     db: "AsyncClient" = Depends(get_db),
     token: dict = Depends(verify_jwt_token),
 ):
+    _validate_context_payload(payload)
     repo = ContextRepository(db)
     ctx = await repo.get_by_id(context_id)
     if not ctx:
         raise HTTPException(status_code=404, detail="Context not found")
     ctx.title = payload.title
     ctx.text = payload.text
+    ctx.bias = payload.bias
     ctx.order_index = payload.order_index
     if payload.is_active is not None:
         ctx.is_active = payload.is_active
@@ -279,7 +295,6 @@ async def delete_context(
 # ---------- Sentence CRUD (scoped to a context) ----------
 
 class SentencePayload(BaseModel):
-    bias: str  # "subject" | "object"
     position: int  # 1..6
     text: str
     correct_answer: bool
@@ -289,7 +304,6 @@ class SentencePayload(BaseModel):
 class SentenceResponse(BaseModel):
     id: str
     context_id: str
-    bias: str
     position: int
     text: str
     correct_answer: bool
@@ -302,7 +316,6 @@ def _sentence_to_response(s: Sentence) -> SentenceResponse:
     return SentenceResponse(
         id=s.id,
         context_id=s.context_id,
-        bias=s.bias,
         position=s.position,
         text=s.text,
         correct_answer=s.correct_answer,
@@ -313,8 +326,6 @@ def _sentence_to_response(s: Sentence) -> SentenceResponse:
 
 
 def _validate_sentence_payload(payload: SentencePayload) -> None:
-    if payload.bias not in (BIAS_SUBJECT, BIAS_OBJECT):
-        raise HTTPException(status_code=400, detail="bias must be 'subject' or 'object'")
     if not 1 <= payload.position <= 6:
         raise HTTPException(status_code=400, detail="position must be in 1..6")
 
@@ -330,7 +341,7 @@ async def list_sentences_for_context(
         raise HTTPException(status_code=404, detail="Context not found")
     repo = SentenceRepository(db)
     sentences = await repo.find_by_context(context_id)
-    sentences.sort(key=lambda s: (s.bias, s.position))
+    sentences.sort(key=lambda s: s.position)
     return [_sentence_to_response(s) for s in sentences]
 
 
@@ -350,15 +361,14 @@ async def create_sentence(
     if not await ctx_repo.exists(context_id):
         raise HTTPException(status_code=404, detail="Context not found")
     repo = SentenceRepository(db)
-    existing = await repo.find_one_by_context_bias_position(context_id, payload.bias, payload.position)
+    existing = await repo.find_one_by_context_position(context_id, payload.position)
     if existing is not None:
         raise HTTPException(
             status_code=409,
-            detail=f"Sentence already exists for bias={payload.bias}, position={payload.position}",
+            detail=f"Sentence already exists at position={payload.position} for this context",
         )
     sentence = Sentence.create(
         context_id=context_id,
-        bias=payload.bias,
         position=payload.position,
         text=payload.text,
         correct_answer=payload.correct_answer,
@@ -381,17 +391,14 @@ async def update_sentence(
     sentence = await repo.get_by_id(sentence_id)
     if not sentence:
         raise HTTPException(status_code=404, detail="Sentence not found")
-    # If bias/position changes, ensure no collision
-    if (sentence.bias, sentence.position) != (payload.bias, payload.position):
-        clash = await repo.find_one_by_context_bias_position(
-            sentence.context_id, payload.bias, payload.position
-        )
+    # If position changes, ensure no collision within the same context
+    if sentence.position != payload.position:
+        clash = await repo.find_one_by_context_position(sentence.context_id, payload.position)
         if clash is not None and clash.id != sentence_id:
             raise HTTPException(
                 status_code=409,
-                detail=f"Another sentence already exists at bias={payload.bias}, position={payload.position}",
+                detail=f"Another sentence already exists at position={payload.position}",
             )
-    sentence.bias = payload.bias
     sentence.position = payload.position
     sentence.text = payload.text
     sentence.correct_answer = payload.correct_answer
