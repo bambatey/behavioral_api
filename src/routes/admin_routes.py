@@ -59,21 +59,24 @@ async def list_participants(
     db: "AsyncClient" = Depends(get_db),
     token: dict = Depends(verify_jwt_token),
 ):
+    # One full read of trial_results, then in-memory count per participant.
+    # Cuts reads from O(N participants) sub-queries to a single get_all.
+    from collections import Counter
     service = ResultsService(db)
     participants = await service.get_all_participants()
-    result: List[ParticipantInfo] = []
-    for p in participants:
-        trial_count = await service.trial_repo.count_by_participant(p.id)
-        result.append(
-            ParticipantInfo(
-                id=p.id,
-                name=p.name,
-                assignment_index=p.assignment_index,
-                session_id=p.session_id,
-                created_at=p.created_at.isoformat(),
-                trial_count=trial_count,
-            )
+    all_trials = await service.trial_repo.get_all()
+    trial_counts = Counter(t.participant_id for t in all_trials)
+    result: List[ParticipantInfo] = [
+        ParticipantInfo(
+            id=p.id,
+            name=p.name,
+            assignment_index=p.assignment_index,
+            session_id=p.session_id,
+            created_at=p.created_at.isoformat(),
+            trial_count=trial_counts.get(p.id, 0),
         )
+        for p in participants
+    ]
     result.sort(key=lambda x: x.created_at, reverse=True)
     return result
 
