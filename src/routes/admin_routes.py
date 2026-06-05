@@ -136,18 +136,34 @@ async def export_all_results(
     )
 
 
+@router.delete("/participants/{participant_id}", status_code=204)
+async def delete_participant(
+    participant_id: str,
+    db: "AsyncClient" = Depends(get_db),
+    token: dict = Depends(verify_jwt_token),
+):
+    """Delete a participant and all their trial_results."""
+    service = ResultsService(db)
+    participant = await service.participant_repo.get_by_id(participant_id)
+    if not participant:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Participant not found")
+    await service.delete_participant(participant_id)
+
+
 @router.get("/analysis")
 async def export_analysis(
     db: "AsyncClient" = Depends(get_db),
     token: dict = Depends(verify_jwt_token),
 ):
-    """Per-participant × per-condition (position × bias) mean Likert Excel."""
+    """Zip containing analysis.xlsx (long-format + per-condition sheets)
+    and analysis.R (a ready-to-source pipeline: descriptives, clmm/lmer,
+    emmeans planned comparisons, ggplot2 interaction plots)."""
     service = AnalysisService(db)
-    excel_bytes = await service.export()
+    bundle_bytes = await service.export_bundle()
     return StreamingResponse(
-        iter([excel_bytes]),
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        headers={"Content-Disposition": "attachment; filename=analysis.xlsx"},
+        iter([bundle_bytes]),
+        media_type="application/zip",
+        headers={"Content-Disposition": "attachment; filename=analysis_bundle.zip"},
     )
 
 

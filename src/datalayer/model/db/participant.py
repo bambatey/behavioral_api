@@ -1,15 +1,19 @@
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
+from typing import Any, Dict, List
 import uuid
 
 
 @dataclass
 class Participant:
-    """A test participant. assignment_index (0..11) determines their Latin-square slot."""
+    """A test participant. assignment_index (0..11) determines their Latin-square slot.
+    trial_order holds the per-session shuffled render data so trials can be served
+    one at a time from /sessions/trial — clients never see the full list."""
     id: str
     name: str
     assignment_index: int
     session_id: str
+    trial_order: List[Dict[str, Any]] = field(default_factory=list)
     created_at: datetime = field(default_factory=datetime.utcnow)
 
     @staticmethod
@@ -19,6 +23,7 @@ class Participant:
             name=name,
             assignment_index=assignment_index,
             session_id=str(uuid.uuid4()),
+            trial_order=[],
             created_at=datetime.utcnow(),
         )
 
@@ -33,8 +38,9 @@ class Participant:
         if isinstance(data.get("created_at"), str):
             data["created_at"] = datetime.fromisoformat(data["created_at"])
         # Tolerate legacy keys (e.g., "test_type" from the old SPR/GJ schema)
-        known = {"id", "name", "assignment_index", "session_id", "created_at"}
+        known = {"id", "name", "assignment_index", "session_id", "trial_order", "created_at"}
         data = {k: v for k, v in data.items() if k in known}
-        # Default for docs that predate assignment_index
+        # Defaults for docs that predate newer fields
         data.setdefault("assignment_index", -1)
+        data.setdefault("trial_order", [])
         return Participant(**data)

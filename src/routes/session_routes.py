@@ -18,16 +18,12 @@ class StartSessionRequest(BaseModel):
 
 
 class TrialPayload(BaseModel):
+    """Slim payload from the client: only an ID + the response.
+    All metadata (context, sentence, bias, correct_answer) is reconstructed
+    on the server so DevTools can't surface anything sensitive."""
     trial_index: int
-    is_filler: bool
-    context_id: Optional[str] = None
-    context_text: Optional[str] = None
     sentence_id: Optional[str] = None
-    sentence_text: Optional[str] = None
     filler_id: Optional[str] = None
-    bias: Optional[str] = None
-    position: Optional[int] = None
-    correct_answer: Optional[bool] = None
     response: Optional[int] = None  # 1..7 Likert
     rt: Optional[float] = None
 
@@ -36,9 +32,21 @@ class StartSessionResponse(BaseModel):
     participant_id: str
     session_id: str
     assignment_index: int
-    trials: List[Dict[str, Any]]
+    total_count: int
     critical_count: int
     filler_count: int
+
+
+class GetTrialRequest(BaseModel):
+    participant_id: str
+    trial_index: int
+
+
+class TrialItemResponse(BaseModel):
+    context_text: str
+    sentence_text: str
+    sentence_id: Optional[str] = None
+    filler_id: Optional[str] = None
 
 
 class SubmitResultsRequest(BaseModel):
@@ -77,6 +85,28 @@ async def start_session(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to start session",
         )
+
+
+@router.post("/trial", response_model=TrialItemResponse)
+async def get_trial(
+    request: GetTrialRequest,
+    db: "AsyncClient" = Depends(get_db),
+) -> TrialItemResponse:
+    """Returns a single trial's render payload by index. Lets the client fetch
+    trials one at a time so the full list is never visible in DevTools."""
+    service = AssignmentService(db)
+    trial = await service.get_trial(request.participant_id, request.trial_index)
+    if trial is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Trial not found for this participant/index",
+        )
+    return TrialItemResponse(
+        context_text=trial.get("context_text", ""),
+        sentence_text=trial.get("sentence_text", ""),
+        sentence_id=trial.get("sentence_id"),
+        filler_id=trial.get("filler_id"),
+    )
 
 
 @router.post("/submit", response_model=SubmitResultsResponse)
