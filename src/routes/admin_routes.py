@@ -156,8 +156,8 @@ async def export_analysis(
     token: dict = Depends(verify_jwt_token),
 ):
     """Zip containing analysis.xlsx (long-format + per-condition sheets)
-    and analysis.R (a ready-to-source pipeline: descriptives, clmm/lmer,
-    emmeans planned comparisons, ggplot2 interaction plots)."""
+    and analysis.sps (SPSS syntax: descriptives, MIXED model, EMMEANS planned
+    comparisons, GGRAPH interaction plots)."""
     service = AnalysisService(db)
     bundle_bytes = await service.export_bundle()
     return StreamingResponse(

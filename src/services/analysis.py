@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 HEADER_FILL = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
 HEADER_FONT = Font(bold=True, color="FFFFFF")
 
-# R script that ships next to the Excel in /admin/analysis bundle.
-_R_TEMPLATE_PATH = Path(__file__).with_name("analysis_template.R")
+# SPSS syntax that ships next to the Excel in /admin/analysis bundle.
+_SPSS_TEMPLATE_PATH = Path(__file__).with_name("analysis_template.sps")
 
 
 class AnalysisService:
@@ -206,19 +206,19 @@ class AnalysisService:
         return out.getvalue()
 
     async def export_bundle(self) -> bytes:
-        """Zip of the analysis Excel + a ready-to-run R script.
+        """Zip of the analysis Excel + a ready-to-run SPSS syntax file.
 
         Layout:
           analysis.xlsx  -- five-sheet workbook (Long format first)
-          analysis.R     -- descriptives + clmm/lmer + emmeans + ggplot pipeline
+          analysis.sps   -- descriptives + MIXED + EMMEANS + GGRAPH pipeline
         """
         excel_bytes = await self.export()
-        r_script = _R_TEMPLATE_PATH.read_text(encoding="utf-8")
+        spss_script = _SPSS_TEMPLATE_PATH.read_text(encoding="utf-8")
 
         buf = BytesIO()
         with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as zf:
             zf.writestr("analysis.xlsx", excel_bytes)
-            zf.writestr("analysis.R", r_script)
+            zf.writestr("analysis.sps", spss_script)
         buf.seek(0)
         return buf.getvalue()
 
