@@ -211,14 +211,19 @@ class AnalysisService:
         Layout:
           analysis.xlsx  -- five-sheet workbook (Long format first)
           analysis.sps   -- descriptives + MIXED + EMMEANS + GGRAPH pipeline
+
+        The .sps is written with a UTF-8 BOM and CRLF line endings — SPSS on
+        Windows is strict about both, and SPSS on Mac handles them fine.
         """
         excel_bytes = await self.export()
         spss_script = _SPSS_TEMPLATE_PATH.read_text(encoding="utf-8")
+        spss_script_crlf = spss_script.replace("\r\n", "\n").replace("\n", "\r\n")
+        spss_bytes = b"\xef\xbb\xbf" + spss_script_crlf.encode("utf-8")
 
         buf = BytesIO()
         with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as zf:
             zf.writestr("analysis.xlsx", excel_bytes)
-            zf.writestr("analysis.sps", spss_script)
+            zf.writestr("analysis.sps", spss_bytes)
         buf.seek(0)
         return buf.getvalue()
 
